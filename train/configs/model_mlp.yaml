@@ -1,0 +1,11 @@
+model_type: mlp
+input_size: 1
+hidden_sizes:
+  - 256
+  - 128
+dropout: 0.2
+num_classes: 3
+label_to_index:
+  up: 0
+  down: 1
+  stay: 2

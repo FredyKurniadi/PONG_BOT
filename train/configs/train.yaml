@@ -1,0 +1,26 @@
+seed: 42
+raw_data_glob: "datasets/raw/*.csv"
+processed_output: "datasets/processed/train_dataset.parquet"
+model_output_dir: "models"
+model_counter_prefix: "bot_"
+feature_columns:
+  - delta_y
+sequence_length: 1
+batch_size: 128
+epochs: 20
+learning_rate: 0.001
+weight_decay: 0.0001
+val_size: 0.2
+num_workers: 0
+
+objective_weighting:
+  paddle_height: 96.0
+  label_deadzone: 6.0
+  distance_scale: 120.0
+  min_weight: 0.2
+  max_weight: 3.0
+
+decision_tree:
+  max_depth: 8
+  min_samples_leaf: 20
+  min_samples_split: 40
