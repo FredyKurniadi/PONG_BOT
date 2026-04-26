@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pong AI Portfolio</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel">
+        <h1>Pong AI Portfolio</h1>
+        <p class="muted">Mode: PVP, Player vs Bot, Bot vs Bot. Data disimpan per frame untuk training model bot.</p>
+        <div class="buttons">
+          <button id="btn-pvp">Start PVP</button>
+          <button id="btn-pve">Start Player vs Bot</button>
+          <button id="btn-bvb">Start Bot vs Bot</button>
+          <button id="btn-stop">Stop Match</button>
+        </div>
+        <div class="buttons">
+          <button id="btn-replay-last">Replay Last Match</button>
+          <select id="replay-select">
+            <option value="">Pilih replay...</option>
+          </select>
+          <button id="btn-replay-selected">Replay Selected</button>
+          <button id="btn-stop-replay">Stop Replay</button>
+        </div>
+        <div class="buttons">
+          <select id="replay-delete-select">
+            <option value="">Pilih replay untuk dihapus...</option>
+          </select>
+          <button id="btn-delete-replay">Delete Replay</button>
+        </div>
+        <div class="buttons">
+          <button id="btn-export-csv">Export Last CSV</button>
+          <button id="btn-train-guide">Train Guide</button>
+        </div>
+        <div class="buttons">
+          <input id="model-file" type="file" accept=".onnx,.json" />
+          <button id="btn-load-model">Load Model (ONNX/Tree)</button>
+        </div>
+        <p id="status" class="status">Status: idle</p>
+      </section>
+      <section class="stage">
+        <canvas id="game-canvas" width="960" height="540"></canvas>
+        <div class="model-log-wrap">
+          <div class="model-log-header">Model Output Log (frame/time -> action)</div>
+          <div id="model-log" class="model-log"></div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
